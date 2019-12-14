@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quoth the Giphy</title>
+</head>
+
+<body>
+    
+        <button type=“button” id= "search" class=“btn”>Search</button>
+        
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script type="text/javascript">
+
+        // var startYear =  $(".start-year").text
+        // var endYear = $(".start-year").text
+        // var query = $(".search").text
+        // var number = $("number-retrieve")
+        var queryURL = "https://api.openbrewerydb.org/breweries?by_state=new_york";
+        // "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + startYear + "&end_date" + endYear + "&q=" + query + "&api-key=9qYOevLt8LZN1Y60GVBvkg1iZHfGFO2Z";
+       
+        $("#search").on("click", function() {
+        
+            // console.log(queryURL);
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+                .then(function(response) {
+                console.log(response);
+             
+            });
+           });
+
+           console.log("test");
+
+
+</script>
+</body>
+
+</html>
+
