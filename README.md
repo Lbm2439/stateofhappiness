@@ -3,9 +3,9 @@ Project Team Name
 The Arrayed States
 
 List of Team Members
-Joe Bailey
-Lauren Minton
-Rob Quinn
+Joe Bailey,
+Lauren Minton,
+Rob Quinn,
 Stephen Reynolds
 
 Project Name
