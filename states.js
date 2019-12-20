@@ -1,10 +1,16 @@
-function firstFunction(); 
 
+//THIS IS FOR THE MAP, DONT DELETE
 
-
-//this is the map...
-{/* <script>
-                    $(function(){
-                      $("#includedContent").load("map.html");
-                    });
-                    </script> */}
+                            new Request.JSON({
+                            url: "map.php",
+                            onSuccess: function(data) {
+                                render(data, {
+                                    editor: false
+                                }); 
+                            }
+                            }).get({
+                                id: 87374,
+                                data: true
+                            });
+              
+//END
