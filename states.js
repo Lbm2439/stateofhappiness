@@ -3,8 +3,8 @@ function firstFunction();
 
 
 //this is the map...
-<script>
+{/* <script>
                     $(function(){
                       $("#includedContent").load("map.html");
                     });
-                    </script>
+                    </script> */}
