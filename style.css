@@ -56,3 +56,8 @@ h6 {
     border: solid 1px rgb(228, 225, 225);
     border-radius: 5px;
 }
+.card {
+    margin: auto;
+    margin-top: 13vh;
+}
+
