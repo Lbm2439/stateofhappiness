@@ -55,6 +55,13 @@ h6 {
     border: solid 1px rgb(228, 225, 225);
     border-radius: 5px;
 }
+<<<<<<< HEAD
+.card {
+    margin: auto;
+    margin-top: 13vh;
+}
+
+=======
 .rowSearch {
     height: 30px;
 }
@@ -71,3 +78,4 @@ h6 {
     border-bottom-left-radius: 0;
     margin-right: 75px;
 }
+>>>>>>> ec50e526576d2c286fc87d166423f745a5cd1e41
