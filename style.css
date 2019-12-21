@@ -23,11 +23,10 @@
 .search-box {
     padding-top: 4px;
     border-radius: 5px;
-
 }
 .search-form{
     border: solid 1px rgb(228, 225, 225);
-    height: 5vh;
+    height: 45px;
     border-radius: 5px;
 }
 .output {
@@ -55,4 +54,20 @@ h6 {
 .round {
     border: solid 1px rgb(228, 225, 225);
     border-radius: 5px;
+}
+.rowSearch {
+    height: 30px;
+}
+.input-group {
+    padding-top: 10px;
+}
+.input-group>.form-control:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 75px;
+}
+.input-group>.input-group-append>.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: 75px;
 }
