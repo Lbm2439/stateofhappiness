@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+<<<<<<< HEAD
     //THIS IS FOR THE MAP, DONT DELETE
 
     // new Request.JSON({
@@ -201,3 +202,22 @@ console.log(response[0].fl);
                         //       }
                         //     });
                         //   });
+=======
+//THIS IS FOR THE MAP, DONT DELETE
+
+                            new Request.JSON({
+                            url: "map.php",
+                            onSuccess: function(data) {
+                                render(data, {
+                                    editor: false
+                                }); 
+                            }
+                            }).get({
+                                id: 87374,
+                                data: true
+                            });
+              
+//END
+
+
+>>>>>>> master
