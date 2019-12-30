@@ -27,19 +27,15 @@ $(document).ready(function () {
 // End Cities in state
 
 
-    // function beer(){
+ // Click Function
     $(".hint ").click(function () {
         console.log(this);
-        let stateClicked = $(this).attr("title");
+        let foundState = $(this).attr("title");
 
-        console.log(stateClicked);
-        var page = 1;
-        var type = "micro"
+        console.log(foundState);
+    
         
-        // console.log(queryURL);
-        https://api.openbrewerydb.org/breweries?by_state=virginia&by_type=micro&page=3&per_page=50&sort=name
-       
-        // dictionary();
+     
        
 // Find capiatl of state clicked and breweries in capital
         $.ajax({
@@ -47,7 +43,7 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                console.log(response.states);
+                // console.log(response.states);
             })
         
             $.ajax({
@@ -55,27 +51,81 @@ $(document).ready(function () {
                 method: "GET",
                 success: function(current) {
                   var capitalData = current.states;
-                  var stateResult = findStateByName(capitalData, stateClicked);
+                  var stateResult = findCapital(capitalData, foundState);
                   var capital = stateResult.capital;
                   var currentState = stateResult.State;
+                  var page =1
+                  var count = 0
                   console.log(capital);
                   
-                  var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + stateClicked + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+                //   var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+                  var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
                   console.log (beerURL);
-                          // var beerURL = "https://api.openbrewerydb.org/breweries?by_city=richmond&by_state=virginia&by_type=micro&page=1&per_page=50&sort=name"
+                       
+                  function getBeer() {   
                           $.ajax({
                               url: beerURL,
                               method: "GET"
                           })
+                        
                               .then(function (response) {
-                                  console.log(response);
-                              })
-                }
-              });
+                                  if (response.length ===50){
+                                      page ++
+                                    //   beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+                                      beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
+                                      console.log (beerURL);
+                                      console.log(response);
+
+                                      $.ajax({
+                                        url: beerURL,
+                                        method: "GET"
+                                    })
+                                    getBeer()
+                                    count = (count + response.length);
+                                    console.log(count);
+                                                                                                       
+                                }
+                                else {
+                                   
+                                    console.log(response);
+                                    count = (count + response.length);
+                                    console.log(count);
+                                    return
+                                }
+                            })
+                        };
+
+                        getBeer();
+                     
+                                        // .then(function (response) {
+                                        //     if (response.length ===50){
+                                        //         page ++
+                                        //         beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+                                        //         console.log (beerURL);
+                                        //     console.log(response);
+                                        // }
+                                        //     else{
+                                        //         console.log(response);
+                                        //     } 
+
+                                            
+                        
+                                            
+                                //       console.log (page);
+                                //   console.log("shit");
+                                  
+                                  }
+                                //   console.log(response.length);
+                                  
+                                //   console.log(response2);
+                              
+                            });
+                
+            //   });
             // });
           
             
-            function findStateByName(capitalData, stateName) {
+            function findCapital(capitalData, stateName) {
               for (var i = 0, len = capitalData.length; i < len; i++) {
                 if (capitalData[i].name === stateName) {
                   return capitalData[i];
@@ -89,7 +139,7 @@ $(document).ready(function () {
 
         //  function dictionary() {
            
-        var dictionaryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"+ stateClicked + "?key=49bde772-aaaf-42cf-a691-47d34eeab1e9"
+        var dictionaryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"+ foundState + "?key=49bde772-aaaf-42cf-a691-47d34eeab1e9"
             
             
             $.ajax({
@@ -100,10 +150,11 @@ $(document).ready(function () {
                    
             
                         .then(function (response) {
+                            console.log(response);
 
                             
-console.log(response.length);
-console.log(response[0].fl);
+// console.log(response.length);
+// console.log(response[0].fl);
 
 // for (var i = 0, len = response.length; i < len; i++) {
 //     if (resposne[i].fl === 'stateName') {
@@ -137,101 +188,35 @@ console.log(response[0].fl);
 
             
 
-        population();
+        // population();
         
     });
 
 
-    function population() {
-        var urlStateInfo = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
-
-        $.ajax({
-            url: urlStateInfo,
-            method: "GET",
-            success: function (population) {
-                var population = show(population);
-
-                function show(population) {
-
-
-                    // var currentDate = moment().format("dddd, MMM Do YYYY");
-                    // $("#today").text
-                    //     (currentDate);
-
-                    console.log("fuck this")
-                    console.log(population)
-                    return
-
-                    // "<h2>" + current.name + " (" + currentDate + ")" + ('<img src="https://openweathermap.org/img/wn/' + current.weather[0].icon + '.png"/>') + "</h2>" +
-                    //     "<p><strong>Temperature</strong>: " + current.main.temp + " °F" + "</p>" +
-                    //     "<p><strong>Humidity</strong>: " + current.main.humidity + "%" + "</p>" +
-                    //     "<p><strong>Wind Speed</strong>: " + current.wind.speed + " MPH" + "</p>"
-
-                };
-
-
-
-            }
-        });
-
-    };
-
-
-    // function cityBrew() {
+    // function population() {
+    //     var urlStateInfo = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
 
     //     $.ajax({
-    //         url: 'https://api.myjson.com/bins/1b1fgk',
-    //         method: "GET"
-    //     })
-    //         .then(function (response) {
-    //             console.log(response);
-    //         })
+    //         url: urlStateInfo,
+    //         method: "GET",
+    //         success: function (population) {
+    //             var population = show(population);
 
-    //         function findStateByName(response, cityName) {
-    //             for (var i = 0, len = response.length; i < len; i++) {
-    //               if (response[i].State === stateName) {
-    //                 return stateData[i];
-    //               }
-    //             }
-    //           }
-        
+    //             function show(population) {
 
-    //     var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + stateClicked + "&page=" + page + "&per_page=50&sort=name";
 
-    //     $.ajax({
-    //         url: beerURL,
-    //         method: "GET"
-    //     })
-    //         .then(function (response) {
-    //             console.log(response);
-    //         })
+    //                 console.log(population)
+    //                 return
 
-    // }
 
- 
-// });
+    //             };
 
 
 
+    //         }
+    //     });
+
+    // };
 
 
-                    // });
-
-
-
-
-                        //     // var state = 'Virginia'
-                        //     var api_url =
-                        //       "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
-                        //     $.ajax({
-                        //       url: api_url,
-                        //       method: "GET",
-                        //       success: function(current) {
-                        //         var population = show(current);
-                        //         $("#testBox").html(population);
-                        //         function show(current) {
-                        //           console.log(current.data);
-                        //         }
-                        //       }
-                        //     });
-                        //   });
+    
