@@ -114,7 +114,9 @@ h6 {
     padding: 16px;
 }
 .card .card-content {
+
     padding: 95px;
+
     border-radius: 0 0 2px 2px;
     background-clip: padding-box;
     box-sizing: border-box;
@@ -131,7 +133,9 @@ h6 {
     padding: 16px;
   }
 .card .card-action a {
+
     color: blue;
+
     margin-right: 16px;
     transition: color 0.3s ease;
     text-transform: uppercase;
@@ -171,4 +175,6 @@ h1 {
 h3, p {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 30px;
+
 }
+
