@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">             
 	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -25,7 +26,7 @@
 <!-- navbar end -->
 
 <!-- this is for the map, hit drop down to expand -->
-    <div class="row">
+        <div class="row">
             <div class="stateMap col-12">
                 <div style="font: 12px Arial, sans-serif; background: rgb(255, 255, 255);">
                         <style id="style">#states a path { transition: fill .5s ease; -moz-transition: fill .5s ease; -webkit-transition: fill .5s ease; fill: #81AC8B;}#states a:hover path { transition: fill .5s ease; -moz-transition: fill .5s ease; -webkit-transition: fill .5s ease; fill: #425957 !important;}#states a:hover path { cursor: pointer; fill: #425957;}#states a text { cursor: pointer; fill: #222222; display: initial;}#states a:hover text { fill: #EAEAEA; color: #EAEAEA;}#states a.inverse text:hover { fill: #EAEAEA;}#states a.inverse text { fill: #222222;}.CCMcredit a { color: #81AC8B;}#states a text { font-size: 12px;}</style>
@@ -33,6 +34,7 @@
                     </div> 
                         <input type="hidden" id="maplocation" value="">
                         </div>
+        </div>
     </div>
 <!-- end of map info -->            
     <div class="container-fluid body-items">
@@ -47,116 +49,81 @@
            	</form>
 		</div>
 		<br>
-        <div class="container-fluid body-items">
-
-            
-                    
-                <div class="row align-items-start">
-                    <div class="col-12 search-form">
-                    <form id="search-form">
-                            <div class="search-box">
-                              <input type="text" onfocus="this.value=''" value="Search State" name="search" class="round">
-                              
-                              <button type="submit" class="btn"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                    <div class="row align-items-middle justify-content-center">
-                    <div class="col-lg-10 col-xs-12 output"> 
-                        <br>
-                        <br> 
-
-
-                      <!-- <---Cards Here--->
-                                        <div class="row">
-                                          <div class="col-sm-3 col-xs-6">
-                                            <div class="card">
-                                              <div class="card-image">
-                                                <img class="img-responsive photo" src="assets/images/arizona.jpg">
-                                                <span class="card-title">State Name</span>
-                                              </div>
-                                      
-                                              <div class="card-content">
-                                                <p>State Facts here</p>
-                                              </div>
-                                      
-                                              <div class="card-action">
-                                                <a href="#" target="new_blank">Link</a>
-                                                <a href="#" target="new_blank">Link</a>
-                                      
-                                              </div>
-                                            </div>
-                                      
-                                          </div>
-                                          <div class="col-sm-3 col-xs-6">
-                                            <div class="card">
-                                              <div class="card-image">
-                                                <img class="img-responsive photo" src="assets/images/california.jpg">
-                                                <span class="card-title">State Name</span>
-                                              </div>
-                                      
-                                              <div class="card-content">
-                                                <p>State Facts here</p>
-                                              </div>
-                                      
-                                              <div class="card-action">
-                                                <a href="#" target="new_blank">Link</a>
-                                                <a href="#" target="new_blank">Link</a>
-                                      
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-sm-3 col-xs-6">
-                                            <div class="card">
-                                              <div class="card-image">
-                                                <img class="img-responsive photo" src="assets/images/Montana.jpg">
-                                                <span class="card-title">State Name</span>
-                                              </div>
-                                      
-                                              <div class="card-content">
-                                                <p>State Facts here</p>
-                                              </div>
-                                      
-                                              <div class="card-action">
-                                                <a href="#" target="new_blank">Link</a>
-                                                <a href="#" target="new_blank">Link</a>
-                                      
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="col-sm-3 col-xs-6">
-                                            <div class="card">
-                                              <div class="card-image">
-                                                <img class="img-responsive photo" src="assets/images/virginia.jpg">
-                                                <span class="card-title">State Name</span>
-                                              </div>
-                                      
-                                              <div class="card-content">
-                                                <p>State Facts here</p>
-                                              </div>
-                                      
-                                              <div class="card-action">
-                                                <a href="#" target="new_blank">Link</a>
-                                                <a href="#" target="new_blank">Link</a>
-                                      
-                                              </div>
-                                            </div>
-                                          </div>
-                                      
-                                        </div>
-                                      
-                                      
-
-
-                                      <!-- <----End Card Here----> 
-                                        
-                                    </div>
+        <div class="container-fluid body-items">    
+            <div class="row align-items-start">
+            </div>
+            <div class="row align-items-middle justify-content-center">
+                <div class="col-lg-10 col-xs-12 output"> 
+                <br>
+                <br> 
+<!-- <---Cards Here--->
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-responsive photo" src="assets/images/arizona.jpg">
+                                        <span class="card-title">State Name</span>
                                 </div>
-                          </div>
+                                <div class="card-content">
+                                    <p>State Facts here</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" target="new_blank">Link</a>
+                                    <a href="#" target="new_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-responsive photo" src="assets/images/california.jpg">
+                                        <span class="card-title">State Name</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>State Facts here</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" target="new_blank">Link</a>
+                                    <a href="#" target="new_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-responsive photo" src="assets/images/Montana.jpg">
+                                        <span class="card-title">State Name</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>State Facts here</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" target="new_blank">Link</a>
+                                    <a href="#" target="new_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-responsive photo" src="assets/images/virginia.jpg">
+                                        <span class="card-title">State Name</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>State Facts here</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#" target="new_blank">Link</a>
+                                    <a href="#" target="new_blank">Link</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+<!-- <----End Card Here----> 
                 </div>
-
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row align-items-end">
         	<div class="col-12 end">
@@ -168,7 +135,7 @@
         </div>
     </div>
 </div>
-
+<br>
             
 <script src="states.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
