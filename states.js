@@ -52,8 +52,7 @@ $(document).ready(function () {
                 var currentState = stateResult.State
                 var page = 1
                 var count = 0
-                //   console.log(capital);
-
+                
                 //   var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
                 var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
@@ -69,30 +68,26 @@ $(document).ready(function () {
                                 //   beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
                                 beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
-                                //   console.log(response);
-
+                                
                                 $.ajax({
                                     url: beerURL,
                                     method: "GET"
                                 })
                                 getBeer()
                                 count = (count + response.length);
-                                // console.log(count);
+                                console.log(count);
 
                             }
                             else {
 
-                                // console.log(response);
                                 count = (count + response.length);
-                                // console.log(count);
+                                console.log(count);
                                 return
                             }
                         })
                 };
 
                 getBeer();
-
-
 
             }
 
@@ -110,11 +105,6 @@ $(document).ready(function () {
         }
 
 
-
-
-
-        //  function dictionary() {
-
         var dictionaryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + foundState + "?key=49bde772-aaaf-42cf-a691-47d34eeab1e9"
 
 
@@ -124,8 +114,6 @@ $(document).ready(function () {
         })
 
             .then(function (response) {
-
-                let sliceDef = null
 
                 for (var i = 0; i < response.length; i++) {
                     if (foundState == "Maine") {
