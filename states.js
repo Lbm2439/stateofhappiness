@@ -15,7 +15,7 @@ $(document).ready(function () {
     //     });
     //END
 
-// cities in State
+    // cities in State
     // $.ajax({
     //     url: 'https://api.census.gov/data/2018/pep/population?get=GEONAME,POP&for=place&in=state:01&key=494e1cd55a3644294c9d5ccdfa0ebba64ee2b477',
     //     method: "GET"
@@ -24,173 +24,139 @@ $(document).ready(function () {
     //         console.log(response);
     //     })
 
-// End Cities in state
+    // End Cities in state
 
 
- // Click Function
+    // Click Function
     $(".hint ").click(function () {
         console.log(this);
         let foundState = $(this).attr("title");
 
-        console.log(foundState);
-    
-        
-     
-       
-// Find capiatl of state clicked and breweries in capital
+
+        // Find capiatl of state clicked and breweries in capital
         $.ajax({
             url: 'https://api.myjson.com/bins/1b1fgk',
             method: "GET"
         })
             .then(function (response) {
-                // console.log(response.states);
+
             })
-        
-            $.ajax({
-                url: 'https://api.myjson.com/bins/1b1fgk',
-                method: "GET",
-                success: function(current) {
-                  var capitalData = current.states;
-                  var stateResult = findCapital(capitalData, foundState);
-                  var capital = stateResult.capital;
-                  var currentState = stateResult.State;
-                  var page =1
-                  var count = 0
-                  console.log(capital);
-                  
+
+        $.ajax({
+            url: 'https://api.myjson.com/bins/1b1fgk',
+            method: "GET",
+            success: function (current) {
+                var capitalData = current.states
+                var stateResult = findCapital(capitalData, foundState)
+                var capital = stateResult.capital
+                var currentState = stateResult.State
+                var page = 1
+                var count = 0
+                //   console.log(capital);
+
                 //   var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
-                  var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
-                  console.log (beerURL);
-                       
-                  function getBeer() {   
-                          $.ajax({
-                              url: beerURL,
-                              method: "GET"
-                          })
-                        
-                              .then(function (response) {
-                                  if (response.length ===50){
-                                      page ++
-                                    //   beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
-                                      beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
-                                      console.log (beerURL);
-                                      console.log(response);
+                var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
-                                      $.ajax({
-                                        url: beerURL,
-                                        method: "GET"
-                                    })
-                                    getBeer()
-                                    count = (count + response.length);
-                                    console.log(count);
-                                                                                                       
-                                }
-                                else {
-                                   
-                                    console.log(response);
-                                    count = (count + response.length);
-                                    console.log(count);
-                                    return
-                                }
-                            })
-                        };
+                function getBeer() {
+                    $.ajax({
+                        url: beerURL,
+                        method: "GET"
+                    })
 
-                        getBeer();
-                     
-                                        // .then(function (response) {
-                                        //     if (response.length ===50){
-                                        //         page ++
-                                        //         beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
-                                        //         console.log (beerURL);
-                                        //     console.log(response);
-                                        // }
-                                        //     else{
-                                        //         console.log(response);
-                                        //     } 
+                        .then(function (response) {
+                            if (response.length === 50) {
+                                page++
+                                //   beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+                                beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
-                                            
-                        
-                                            
-                                //       console.log (page);
-                                //   console.log("shit");
-                                  
-                                  }
-                                //   console.log(response.length);
-                                  
-                                //   console.log(response2);
-                              
-                            });
-                
-            //   });
-            // });
-          
-            
-            function findCapital(capitalData, stateName) {
-              for (var i = 0, len = capitalData.length; i < len; i++) {
-                if (capitalData[i].name === stateName) {
-                  return capitalData[i];
-                }
-              }
+                                //   console.log(response);
+
+                                $.ajax({
+                                    url: beerURL,
+                                    method: "GET"
+                                })
+                                getBeer()
+                                count = (count + response.length);
+                                console.log(count);
+
+                            }
+                            else {
+
+                                // console.log(response);
+                                count = (count + response.length);
+                                console.log(count);
+                                return
+                            }
+                        })
+                };
+
+                getBeer();
+
+
+
             }
-        
 
-     
-         
+
+        });
+
+
+
+        function findCapital(capitalData, stateName) {
+            for (var i = 0, len = capitalData.length; i < len; i++) {
+                if (capitalData[i].name === stateName) {
+                    return capitalData[i];
+                }
+            }
+        }
+
+
+
+
 
         //  function dictionary() {
-           
-        var dictionaryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"+ foundState + "?key=49bde772-aaaf-42cf-a691-47d34eeab1e9"
-            
-            
-            $.ajax({
-                url: dictionaryURL,
-                method: "GET"
+
+        var dictionaryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + foundState + "?key=49bde772-aaaf-42cf-a691-47d34eeab1e9"
+
+
+        $.ajax({
+            url: dictionaryURL,
+            method: "GET"
+        })
+
+
+
+            .then(function (response) {
+
+                for (var i = 0; i < response.length; i++) {
+                    if (response[i].fl == 'geographical name') {
+                        return response[i].shortdef,
+                            defArray = response[i].shortdef,
+                            console.log(defArray),
+                            searchString = 'state',
+                            result = defArray.findIndex((i) => { return i.startsWith(searchString); }, searchString),
+                            goodDef = defArray[result],
+                            sliceDef = goodDef.slice(0, goodDef.lastIndexOf(', population')),
+                            console.log(sliceDef)
+                    }
+
+
+                    else {
+                        return
+                        //   console.log("poop")
+                    }
+
+                }
+
             })
-            
-                   
-            
-                        .then(function (response) {
-                            console.log(response);
 
-                            
-// console.log(response.length);
-// console.log(response[0].fl);
-
-// for (var i = 0, len = response.length; i < len; i++) {
-//     if (resposne[i].fl === 'stateName') {
-//       return stateData[i];
-//     }
-//   }
-
-                            
-                            var fullDef = response[0].shortdef;
-                            var slice = fullDef[0].slice(0, fullDef[0].lastIndexOf(', population'));
-                            console.log (slice);
-                        })
-                                
-                        // str.slice(0, str.lastIndexOf('_'));
-            
-                })
-            
-        
-       
-            
-            // };
-            
-        // };
+    })
 
 
-// if (response != null) page +=
 
-// beer()
 
-           
+    // population();
 
-            
-
-        // population();
-        
-    });
+});
 
 
     // function population() {
@@ -219,4 +185,3 @@ $(document).ready(function () {
     // };
 
 
-    
