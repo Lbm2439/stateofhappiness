@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     // Click Function
     $(".hint ").click(function () {
-        console.log(this);
+        // console.log(this);
         let foundState = $(this).attr("title");
 
 
@@ -77,14 +77,14 @@ $(document).ready(function () {
                                 })
                                 getBeer()
                                 count = (count + response.length);
-                                console.log(count);
+                                // console.log(count);
 
                             }
                             else {
 
                                 // console.log(response);
                                 count = (count + response.length);
-                                console.log(count);
+                                // console.log(count);
                                 return
                             }
                         })
@@ -123,26 +123,42 @@ $(document).ready(function () {
             method: "GET"
         })
 
-
-
             .then(function (response) {
 
+                let sliceDef = null
+
                 for (var i = 0; i < response.length; i++) {
-                    if (response[i].fl == 'geographical name') {
+                    if (foundState == "Maine") {
+                        sliceDef = "state on the Atlantic coast in the northeastern U.S. and bordering on the Canadian provinces of Quebec and New Brunswick; capital Augusta area 33,265 square miles (86,156 square kilometers)"
+                        console.log(sliceDef)
+                    }
+                    if (foundState == "Washington") {
+                        sliceDef = "state in the northwestern U.S. bordering the Pacific Ocean, the Strait of Juan de Fuca, Puget Sound, the Strait of Georgia, and British Columbia, Canada; capital Olympia area 68,192 square miles (177,299 square kilometers)"
+                        console.log(sliceDef)
+                    }
+                    if (foundState == "Texas") {
+                        sliceDef = "state in the southern U.S. bordering on Mexico and the Gulf of Mexico; capital Austin area 266,807 square miles (691,030 square kilometers)"
+                        console.log(sliceDef)
+                    }
+                    if (foundState == "Delaware") {
+                        sliceDef = "state of the eastern U.S. bordering on the Delaware River, Delaware Bay, and the Atlantic; capital Dover area 2057 square miles (5348 square kilometers)"
+                        console.log(sliceDef)
+                    }
+                    if (foundState == "Illinois") {
+                        sliceDef = "state in the central part of the U.S. having the Mississippi River as its western boundary and bordering on Lake Michigan in the northeast; capital Springfield area 56,400 square miles (146,640 square kilometers)"
+                        console.log(sliceDef)
+                    }
+
+
+                    else if (response[i].shortdef != 'geographical name') {
                         return response[i].shortdef,
                             defArray = response[i].shortdef,
-                            console.log(defArray),
                             searchString = 'state',
                             result = defArray.findIndex((i) => { return i.startsWith(searchString); }, searchString),
                             goodDef = defArray[result],
                             sliceDef = goodDef.slice(0, goodDef.lastIndexOf(', population')),
                             console.log(sliceDef)
-                    }
 
-
-                    else {
-                        return
-                        //   console.log("poop")
                     }
 
                 }
