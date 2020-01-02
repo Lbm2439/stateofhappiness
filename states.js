@@ -3,7 +3,7 @@ $(document).ready(function() {
   var api_url =
     "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
   var api_income =
-    "http://datausa.io/api/data?measure=Household%20Income%20by%20Race,Household%20Income%20by%20Race%20Moe&Geography=04000US34:neighbors:parents,04000US34,04000US34:similar";
+    "https://datausa.io/api/data?drilldowns=State&measures=Adults%20With%20Major%20Depressive%20Episode,Household%20Income%20by%20Race&year=latest";
   $(".hint ").click(function() {
     var foundState = $(this).attr("title");
     $.ajax({
@@ -13,8 +13,7 @@ $(document).ready(function() {
         var stateData = current.data;
         var stateResult = findStateByName(stateData, foundState);
         var currentPop = stateResult.Population;
-        var currentState = stateResult.State;
-        // console.log(currentState, currentPop);
+        console.log(currentPop);
       }
     });
     $.ajax({
@@ -22,7 +21,12 @@ $(document).ready(function() {
       method: "GET",
       success: function(html) {
         var stateIncome = html.data;
-        console.log(stateIncome);
+        var incomeResult = incomeByState(stateIncome, foundState);
+        // $("#DivId").append(Math.round(10 * incomeResult.Episode) / 10);
+        // $("#DivId").append(incomeResult.Income);
+        console.log(Math.round(10 * incomeResult.Episode) / 10);
+        console.log(incomeResult.Episode);
+        console.log(incomeResult.Income);
       }
     });
   });
@@ -34,27 +38,35 @@ $(document).ready(function() {
       }
     }
   }
-
   function incomeByState(stateIncome, stateName) {
+    var stateInfo = { Income: "", Episode: "" };
     for (var i = 0, len = stateIncome.length; i < len; i++) {
-      if (stateIncome[i].Geography === stateName) {
-        return stateIncome[i];
-        
+      if (stateIncome[i].State === stateName) {
+        if (stateIncome[i].hasOwnProperty("Household Income by Race")) {
+          stateInfo.Income = stateIncome[i]["Household Income by Race"];
+        }
+        if (
+          stateIncome[i].hasOwnProperty("Adults With Major Depressive Episode")
+        ) {
+          stateInfo.Episode =
+            stateIncome[i]["Adults With Major Depressive Episode"];
+        }
       }
     }
+    return stateInfo;
   }
-  
 });
 
-//Bailey work area
-// //THIS IS FOR THE MAP, DONT DELETE
-// new Request.JSON({
-//   onSuccess: function(data) {
-//     render(data, {
-//       editor: false
-//     });
-//   }
-// }).get({
-//   id: 87374,
-//   data: true
-// });
+//                             new Request.JSON({
+//                             url: "map.php",
+//                             onSuccess: function(data) {
+//                                 render(data, {
+//                                     editor: false
+//                                 });
+//                             }
+//                             }).get({
+//                                 id: 87374,
+//                                 data: true
+//                             });
+
+// //END
