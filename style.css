@@ -30,7 +30,6 @@
     border-radius: 5px;
 }
 .output {
-    border: solid 1px rgb(228, 225, 225);
     height: 75vh;
     border-radius: 5px;
     margin-top: 10vh;
@@ -90,18 +89,13 @@ h6 {
     background-clip: padding-box;
     min-height:400px;
     margin: auto;
-    text-align: center;
-    
+    text-align: center;   
 }
-
 .main-card{
 max-height: 0px;
 }
-
 #infoCard {
-
     padding: 5px;
-
 }
 .card span.card-title {
     color: #fff;
@@ -136,6 +130,9 @@ max-height: 0px;
     margin: 0;
     color: inherit;
 }
+.card .card-content p #incomeInfo {
+    font-size: large;
+}
 .card .card-content span.card-title {
     line-height: 48px;
 }
@@ -144,9 +141,7 @@ max-height: 0px;
     padding: 16px;
   }
 .card .card-action a {
-
     color: blue;
-
     margin-right: 16px;
     transition: color 0.3s ease;
     text-transform: uppercase;
@@ -155,7 +150,6 @@ max-height: 0px;
     color: #ffd8a6;
     text-decoration: none;
 }
-
 body{
     height: 900px;
 }
@@ -176,8 +170,6 @@ header .overlay{
     color: #fff;
     text-shadow: 5px 5px 5px #333;
     background-image: url("https://www.tripsavvy.com/thmb/NSz7jn_Axo9bHLj_jP2-80RZL7k=/2120x1415/filters:fill(auto,1)/highway-1-d3cdf8826ee14dae838441a536bf2b61.jpg");
-   
-   
 }  
 header .beerHead{
         width: 100%;
@@ -186,19 +178,16 @@ header .beerHead{
         text-shadow: 1px 1px 1px #333;
         background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/beer-bubbles-in-the-high-magnification-faferek.jpg"); 
 }    
-
 h1 {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 65px;
 	margin-bottom: 10px;
 }
-
 h3, p {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 30px;
 
 }
-
 .btns{
     display: flex; justify-content: center;
 }
@@ -214,10 +203,8 @@ h2 {
     font-size: 2rem;
     line-height: 0px;
 }
-
 #mainMap {
     margin: 0 auto;
     display: block;
     text-align: center;
 }
-
