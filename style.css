@@ -140,7 +140,7 @@ max-height: 0px;
     color: #eeb766d3;
     text-shadow: 1px 1px 1px #333;
 }
-#incomeCard #brewCard #mentalCard {
+#incomeInfo #brewInfo #mentalInfo {
     font-size: 30px !important; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #eeb766d3;
