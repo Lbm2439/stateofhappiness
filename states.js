@@ -40,7 +40,7 @@ $(document).ready(function () {
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
                 $("#incomeInfo").append("Income: " + "<br></br>" + "$" + incomeResult.Income);
 
-                $("#mentalInfo").append("Depressive Episode: " + "<br></br>" + (Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Mental Episode: " + "<br></br>" + (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
                             else {
 
                                 count = (count + response.length);
-                                $("#brewInfo").append("Total Breweries: " + count);
+                                $("#brewInfo").append("Total Breweries: " + "<br></br>" + count);
                                 $("#capitalLink").append(capital + ", " + abbr + " Breweries");  
                                 return
                             }
