@@ -172,11 +172,21 @@ header {
 header .overlay{
 	width: 100%;
 	height: 100%;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-    background-image: linear-gradient( 135deg, #f3e77d8e 10%, #e2a03c8c 100%);
-	
-}
+    /* color: #eeb766d3; */
+    color: #fff;
+    text-shadow: 5px 5px 5px #333;
+    background-image: url("https://www.tripsavvy.com/thmb/NSz7jn_Axo9bHLj_jP2-80RZL7k=/2120x1415/filters:fill(auto,1)/highway-1-d3cdf8826ee14dae838441a536bf2b61.jpg");
+   
+   
+}  
+header .beerHead{
+        width: 100%;
+        height: 100%;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #333;
+        background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/beer-bubbles-in-the-high-magnification-faferek.jpg"); 
+}    
+
 h1 {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-size: 65px;
@@ -205,14 +215,9 @@ h2 {
     line-height: 0px;
 }
 
-/* #states {
-    transform:scale(0.8);
-    -webkit-transform:scale(0.8);
-
-     } */
-
 #mainMap {
     margin: 0 auto;
     display: block;
     text-align: center;
 }
+
