@@ -130,8 +130,32 @@ max-height: 0px;
     margin: 0;
     color: inherit;
 }
-.card .card-content p #incomeInfo {
-    font-size: large;
+
+#capitalLink {
+    font-size: 14px; 
+}
+#infoCard {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+}
+#incomeCard {
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+}
+#mentalCard {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+}
+#brewCard {
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
 }
 .card .card-content span.card-title {
     line-height: 48px;
