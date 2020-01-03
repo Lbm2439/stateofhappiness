@@ -42,7 +42,7 @@ $(document).ready(function () {
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
                 $("#incomeInfo").append("$" + incomeResult.Income);
 
-                $("#mentalInfo").append("Adults With Major Depressive Episode: " + (Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Major Depressive Episode: " + "<br></br>" (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
