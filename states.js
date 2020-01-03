@@ -54,6 +54,7 @@ $(document).ready(function () {
                 var capitalData = current.states
                 var stateResult = findCapital(capitalData, foundState)
                 var capital = stateResult.capital
+                var abbr = stateResult.abbr
                 var currentState = stateResult.State
                 var page = 1
                 var count = 0
@@ -84,7 +85,7 @@ $(document).ready(function () {
 
                                 count = (count + response.length);
                                 $("#brewInfo").append("Total Breweries: " + count);
-                                $("#capitalLink").append(capital + ", " + foundState + " Breweries");  
+                                $("#capitalLink").append(capital + ", " + abbr + " Breweries");  
                                 return
                             }
                         })
@@ -140,11 +141,16 @@ $(document).ready(function () {
                         $("#basicInfo").append(sliceDef);
                     }
                     if (foundState == "Hawaii") {
-                        sliceDef = "southernmost and newest state of the U.S. comprising the Hawaiian Islands except the Midway Islands; annexed 1898, a territory 1900–59; capital Honolulu area 6471 square miles (16,760 square kilometers)"
-                        $("#basicInfo").append(sliceDef);
-                        console.log(foundState)
-                    }
-
+                        (response[i].shortdef != 'geographical name') 
+                        
+                            return response[i].shortdef,
+                                defArray = response[i].shortdef,
+                                searchString = 'island',
+                                result = defArray.findIndex((i) => { return i.startsWith(searchString); }, searchString),
+                                goodDef = defArray[result],
+                                sliceDef = goodDef.slice(0, goodDef.lastIndexOf(', population')),
+                                $("#basicInfo").append(sliceDef);
+                        }
 
                     else if (response[i].shortdef != 'geographical name') {
                         return response[i].shortdef,
