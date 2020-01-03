@@ -24,8 +24,6 @@ $(document).ready(function () {
         let foundState = $(this).attr("title");
         localStorage.setItem("state", foundState);
 
-        // console.log(foundState);
-
         $("#stateName").append(foundState);
 
         $.ajax({
@@ -40,9 +38,9 @@ $(document).ready(function () {
                 $("#basicInfo").append("Population: " + currentPop + "<br></br>");
                 incomeResult.Income = parseInt(incomeResult.Income, 10);
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
-                $("#incomeInfo").append("$" + incomeResult.Income);
+                $("#incomeInfo").append("Household Income" + "<br></br>" "$" + incomeResult.Income);
 
-                $("#mentalInfo").append("Major Depressive Episode: " + "<br></br>" (Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Major Depressive Episode: " + "<br></br>" + (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
