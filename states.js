@@ -1,46 +1,30 @@
 $(document).ready(function () {
 
-    //THIS IS FOR THE MAP, DONT DELETE
 
-    // new Request.JSON({
-    //     url: "map.php",
-    //     onSuccess: function(data) {
-    //         render(data, {
-    //             editor: false
-    //         }); 
-    //     }
-    //     }).get({
-    //         id: 87374,
-    //         data: true
-    //     });
-    //END
-
-    // cities in State
-    // $.ajax({
-    //     url: 'https://api.census.gov/data/2018/pep/population?get=GEONAME,POP&for=place&in=state:01&key=494e1cd55a3644294c9d5ccdfa0ebba64ee2b477',
-    //     method: "GET"
-    // })
-    //     .then(function (response) {
-    //         console.log(response);
-    //     })
-
-    // End Cities in state
-
+    var api_income =
+        "https://datausa.io/api/data?drilldowns=State&measures=Population,Adults%20With%20Major%20Depressive%20Episode,Household%20Income%20by%20Race&year=latest";
 
     // Click Function
     $(".hint ").click(function () {
         // console.log(this);
         let foundState = $(this).attr("title");
 
-
-        // Find capiatl of state clicked and breweries in capital
         $.ajax({
-            url: 'https://api.myjson.com/bins/1b1fgk',
-            method: "GET"
-        })
-            .then(function (response) {
+            url: api_income,
+            method: "GET",
+            success: function (html) {
+                var stateIncome = html.data;
+                var incomeResult = incomeByState(stateIncome, foundState);
+                var currentPop = incomeResult.Population;
+                // $("#DivId").append(Math.round(10 * incomeResult.Episode) / 10);
+                // $("#DivId").append(incomeResult.Income);
+                // console.log(incomeResult);
+                console.log(incomeResult.Income);
+                console.log(Math.round(10 * incomeResult.Episode) / 10  );
+                console.log(incomeResult.Population); 
+            }
+        });
 
-            })
 
         $.ajax({
             url: 'https://api.myjson.com/bins/1b1fgk',
@@ -52,8 +36,7 @@ $(document).ready(function () {
                 var currentState = stateResult.State
                 var page = 1
                 var count = 0
-                
-                //   var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
+
                 var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
                 function getBeer() {
@@ -65,17 +48,15 @@ $(document).ready(function () {
                         .then(function (response) {
                             if (response.length === 50) {
                                 page++
-                                //   beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
                                 beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&page=" + page + "&per_page=50&sort=name";
 
-                                
+
                                 $.ajax({
                                     url: beerURL,
                                     method: "GET"
                                 })
                                 getBeer()
                                 count = (count + response.length);
-                                console.log(count);
 
                             }
                             else {
@@ -153,39 +134,31 @@ $(document).ready(function () {
 
             })
 
+        function incomeByState(stateIncome, stateName) {
+            var stateInfo = { Income: "", Episode: "", Population: "" };
+            for (var i = 0, len = stateIncome.length; i < len; i++) {
+                if (stateIncome[i].State === stateName) {
+                    if (stateIncome[i].hasOwnProperty("Household Income by Race")) {
+                        stateInfo.Income = stateIncome[i]["Household Income by Race"];
+                    }
+                    if (
+                        stateIncome[i].hasOwnProperty("Adults With Major Depressive Episode")
+                    ) {
+                        stateInfo.Episode =
+                            stateIncome[i]["Adults With Major Depressive Episode"];
+                    }
+                    if (stateIncome[i].hasOwnProperty("Population")) {
+                        stateInfo.Population = stateIncome[i]["Population"];
+                    }
+                }
+            }
+            return stateInfo;
+        }
+
     })
-
-
-
-
-    // population();
 
 });
 
 
-    // function population() {
-    //     var urlStateInfo = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
-
-    //     $.ajax({
-    //         url: urlStateInfo,
-    //         method: "GET",
-    //         success: function (population) {
-    //             var population = show(population);
-
-    //             function show(population) {
-
-
-    //                 console.log(population)
-    //                 return
-
-
-    //             };
-
-
-
-    //         }
-    //     });
-
-    // };
 
 
