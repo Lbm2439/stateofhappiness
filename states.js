@@ -54,6 +54,7 @@ $(document).ready(function () {
                 var capitalData = current.states
                 var stateResult = findCapital(capitalData, foundState)
                 var capital = stateResult.capital
+                var abbr = stateResult.abbr
                 var currentState = stateResult.State
                 var page = 1
                 var count = 0
