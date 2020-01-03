@@ -40,7 +40,7 @@ $(document).ready(function () {
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
                 $("#incomeInfo").append("Income: " + "<br></br>" + "$" + incomeResult.Income);
 
-                $("#mentalInfo").append("Major Depressive Episode: " + "<br></br>" + (Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Depressive Episode: " + "<br></br>" + (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
