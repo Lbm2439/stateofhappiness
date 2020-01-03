@@ -140,7 +140,22 @@ max-height: 0px;
     color: #eeb766d3;
     text-shadow: 1px 1px 1px #333;
 }
-#incomeInfo #brewInfo #mentalInfo {
+
+#incomeCard {
+    font-size: 30px !important; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+}
+
+#brewCard {
+    font-size: 30px !important; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+}
+
+#mentalCard {
     font-size: 30px !important; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #eeb766d3;
