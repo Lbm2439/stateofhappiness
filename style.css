@@ -113,10 +113,10 @@ h6 {
     padding: 16px;
 }
 .card .card-content {
-
-    padding: 95px;
-
     border-radius: 0 0 2px 2px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
     background-clip: padding-box;
     box-sizing: border-box;
 }
