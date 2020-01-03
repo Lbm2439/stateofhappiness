@@ -190,5 +190,10 @@ h2 {
 }
 .btn{
     font-size: 2rem;
+    line-height: 0px;
 }
 
+#states {
+    transform:scale(0.7);
+    -webkit-transform:scale(0.7);
+  }

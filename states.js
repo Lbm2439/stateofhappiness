@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-
+    // document.getElementById(states).setAttribute("states", "scale(0.7)");
 
     var api_income =
         "https://datausa.io/api/data?drilldowns=State&measures=Population,Adults%20With%20Major%20Depressive%20Episode,Household%20Income%20by%20Race&year=latest";
