@@ -1,44 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-//brewery api to show state/city brewery information
 <head>
-  <meta charset="utf-8">
-  <title>Quoth the Giphy</title>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">             
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>The State Of Happiness</title>
+
 </head>
-
 <body>
-    
-        <button type=“button” id= "search" class=“btn”>Search</button>
-        
-    
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script type="text/javascript">
+	<div class="container-fluid">
+    <!-- nav bar -->
+    <header>
+        <div class="overlay">
+            <h1>Breweries In Your Area</h1>
+            <h3S>Brewery Information</h3State>
+            <p>In the area below, you can find breweries located in the capital city of your chosen state.</p>
+            <br>
+        </div>
+    </header>
+    <div id="brewCalls"></div>
 
-        // var startYear =  $(".start-year").text
-        // var endYear = $(".start-year").text
-        // var query = $(".search").text
-        // var number = $("number-retrieve")
-        var queryURL = "https://api.openbrewerydb.org/breweries?by_state=new_york";
-        // "https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=" + startYear + "&end_date" + endYear + "&q=" + query + "&api-key=9qYOevLt8LZN1Y60GVBvkg1iZHfGFO2Z";
-       
-        $("#search").on("click", function() {
-        
-            // console.log(queryURL);
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-                .then(function(response) {
-                console.log(response);
-             
-            });
-           });
-
-           console.log("test");
-
-
-</script>
+    <script src="beer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
-
-</html>
-
