@@ -24,7 +24,7 @@ $(document).ready(function () {
         let foundState = $(this).attr("title");
         localStorage.setItem("state", foundState);
 
-        console.log(foundState);
+        // console.log(foundState);
 
         $("#stateName").append(foundState);
 
@@ -142,7 +142,7 @@ $(document).ready(function () {
                     if (foundState == "Hawaii") {
                         sliceDef = "southernmost and newest state of the U.S. comprising the Hawaiian Islands except the Midway Islands; annexed 1898, a territory 1900–59; capital Honolulu area 6471 square miles (16,760 square kilometers)"
                         $("#basicInfo").append(sliceDef);
-                        console.log(sliceDef)
+                        console.log(foundState)
                     }
 
 
