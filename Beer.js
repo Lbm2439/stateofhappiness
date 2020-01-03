@@ -50,13 +50,13 @@ $(document).ready(function () {
 
                         }
                         else {
-                            console.log(beerURL);
                             count = (count + response.length);
                         }
 
                         var breweries = response
 
                         breweries.forEach(breweries => {
+                            var formattedPhone = breweries.phone.substr(0, 3) + '-' + breweries.phone.substr(3, 3) + '-' + breweries.phone.substr(6,4)
                             const card = `<div class="card" style="width: 38rem;">
                         
                         <div class="card-body">
@@ -65,7 +65,7 @@ $(document).ready(function () {
                         </div>
                         <ul class="list-group list-group">
                           <li class="list-group-item">${breweries.street + " " + "<br></br>" + breweries.city + ", " + breweries.state + " " + breweries.postal_code}</li>
-                          <li class="list-group-item">Phone: ${breweries.phone}</li>
+                          <li class="list-group-item">Phone: ${formattedPhone}</li>
                         </ul>
                         <div class="card-body">
                           <a href= "#" class="card-link">${breweries.website_url}</a>
