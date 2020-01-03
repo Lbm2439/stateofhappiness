@@ -41,7 +41,7 @@ $(document).ready(function () {
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
                 $("#incomeInfo").append("$" + incomeResult.Income);
 
-                $("#mentalInfo").append("Major Depressive Episode: " + (Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Adults With Major Depressive Episode: " + (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
@@ -83,6 +83,7 @@ $(document).ready(function () {
 
                                 count = (count + response.length);
                                 $("#brewInfo").append("Total Breweries: " + count);
+                                $("#capitalLink").append("Brewery Info for " + capital + ", " + foundState);  
                                 return
                             }
                         })
