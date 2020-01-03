@@ -90,6 +90,18 @@ h6 {
     background-clip: padding-box;
     min-height:400px;
     margin: auto;
+    text-align: center;
+    
+}
+
+.main-card{
+max-height: 0px;
+}
+
+#infoCard {
+
+    padding: 5px;
+
 }
 .card span.card-title {
     color: #fff;
@@ -193,7 +205,14 @@ h2 {
     line-height: 0px;
 }
 
-#states {
-    transform:scale(0.7);
-    -webkit-transform:scale(0.7);
-  }
+/* #states {
+    transform:scale(0.8);
+    -webkit-transform:scale(0.8);
+
+     } */
+
+#mainMap {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}

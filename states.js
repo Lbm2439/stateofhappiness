@@ -8,6 +8,11 @@ $(document).ready(function () {
     // Click Function
     $(".hint ").click(function () {
         
+       
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#stateName").offset().top
+        }, 2000);
+   
         $("#basicInfo").empty();
         $("#incomeInfo").empty();
         $("#mentalInfo").empty();
@@ -17,6 +22,8 @@ $(document).ready(function () {
 
         let foundState = $(this).attr("title");
         localStorage.setItem("state", foundState);
+
+        console.log(foundState);
 
         $("#stateName").append(foundState);
 
@@ -32,9 +39,9 @@ $(document).ready(function () {
                 $("#basicInfo").append("Population: " + currentPop + "<br></br>");
                 incomeResult.Income = parseInt(incomeResult.Income, 10);
                 incomeResult.Income = numberWithCommas(incomeResult.Income);
-                $("#incomeInfo").append(incomeResult.Income);
+                $("#incomeInfo").append("$" + incomeResult.Income);
 
-                $("#mentalInfo").append((Math.round(10 * incomeResult.Episode) / 10) + "%");
+                $("#mentalInfo").append("Major Depressive Episode: " + (Math.round(10 * incomeResult.Episode) / 10) + "%");
             }
         });
 
@@ -75,7 +82,7 @@ $(document).ready(function () {
                             else {
 
                                 count = (count + response.length);
-                                $("#brewInfo").append(count);
+                                $("#brewInfo").append("Total Breweries: " + count);
                                 return
                             }
                         })
@@ -129,6 +136,11 @@ $(document).ready(function () {
                     if (foundState == "Illinois") {
                         sliceDef = "state in the central part of the U.S. having the Mississippi River as its western boundary and bordering on Lake Michigan in the northeast; capital Springfield area 56,400 square miles (146,640 square kilometers)"
                         $("#basicInfo").append(sliceDef);
+                    }
+                    if (foundState == "Hawaii") {
+                        sliceDef = "southernmost and newest state of the U.S. comprising the Hawaiian Islands except the Midway Islands; annexed 1898, a territory 1900–59; capital Honolulu area 6471 square miles (16,760 square kilometers)"
+                        $("#basicInfo").append(sliceDef);
+                        console.log(sliceDef)
                     }
 
 
