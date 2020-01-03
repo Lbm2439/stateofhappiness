@@ -33,6 +33,9 @@
     border: solid 1px rgb(228, 225, 225);
     height: 75vh;
     border-radius: 5px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding-top: 12vh;
 }
 .remove {
     font-size: 1.5rem;
@@ -54,10 +57,6 @@ h6 {
 .round {
     border: solid 1px rgb(228, 225, 225);
     border-radius: 5px;
-}
-.card{
-    margin: auto;
-
 }
 .rowSearch {
     height: 30px;
@@ -91,6 +90,7 @@ h6 {
     border-radius: 2px;
     background-clip: padding-box;
     min-height:400px;
+    margin: auto;
 }
 .card span.card-title {
     color: #fff;
@@ -145,8 +145,9 @@ h6 {
     text-decoration: none;
 }
 
-*{padding: 0; margin: 0; box-sizing: border-box;}
-body{height: 900px;}
+body{
+    height: 900px;
+}
 header {
 	text-align: center;
 	width: 100%;
@@ -155,7 +156,7 @@ header {
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
+	border-radius: 0 0 85% 85% / 60%;
 }
 header .overlay{
 	width: 100%;
@@ -176,5 +177,20 @@ h3, p {
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 30px;
 
+}
+
+.btns{
+    display: flex; justify-content: center;
+}
+h2 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #eeb766d3;
+    text-shadow: 1px 1px 1px #333;
+    font-size: 4rem;
+    margin-left: 2vh;
+}
+.btn{
+    font-size: 2rem;
 }
 
