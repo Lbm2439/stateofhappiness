@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     //    let foundState = "Texas"
     let foundState = localStorage.getItem("state");
-    console.log(foundState);
 
     // Find capiatl of state clicked and breweries in capital
     $.ajax({
@@ -25,7 +24,6 @@ $(document).ready(function () {
             var page = 1
             var count = 0
 
-            console.log(capital);
             $("#cityState").append("Breweries in " + capital + ", " + foundState);
 
             var beerURL = "https://api.openbrewerydb.org/breweries?by_state=" + foundState + "&by_city=" + capital + "&page=" + page + "&per_page=50&sort=name";
@@ -56,7 +54,7 @@ $(document).ready(function () {
                         var breweries = response
 
                         breweries.forEach(breweries => {
-                            var formattedPhone = breweries.phone.substr(0, 3) + '-' + breweries.phone.substr(3, 3) + '-' + breweries.phone.substr(6,4)
+                            var formattedPhone = breweries.phone.substr(0, 3) + '-' + breweries.phone.substr(3, 3) + '-' + breweries.phone.substr(6, 4)
                             const card = `<div class="card" style="width: 38rem;">
                         
                         <div class="card-body">
