@@ -18,6 +18,7 @@ $(document).ready(function () {
         $("#mentalInfo").empty();
         $("#brewInfo").empty();
         $("#stateName").empty();
+        $("#capitalLink").empty();   
 
 
         let foundState = $(this).attr("title");
