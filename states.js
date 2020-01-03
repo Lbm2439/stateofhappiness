@@ -85,7 +85,7 @@ $(document).ready(function () {
 
                                 count = (count + response.length);
                                 $("#brewInfo").append("Total Breweries: " + count);
-                                $("#capitalLink").append(capital + ", " + foundState + " Breweries");  
+                                $("#capitalLink").append(capital + ", " + abbr + " Breweries");  
                                 return
                             }
                         })
