@@ -13,15 +13,26 @@
 </head>
 <body>
 	<div class="container-fluid">
-   
-        <header>
-                <div class="overlay">
+
+    <!-- nav bar -->
+    <header>
+        <div class="overlay">
             <h1>The State Of Happiness</h1>
             <h3S>State And City Data</h3State>
             <p>Click a state below to open a prompt regarding city-data, brewery  information, etc.  This is going to say something better as soon as I am finished.</p>
-                <br>
+            <div class="rowSearch align-items-start">
+                <form id="search-form">
+                       <div class="input-group mb-3">
+                        <input type="text" class="stateSearch form-control" placeholder="Search States Here" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-info" type="button" id="button-addon2">Search</button>
+                        </div>
                     </div>
-            </header>
+                </form>
+            </div>
+            <br>
+        </div>
+    </header>
 
 <!-- navbar end -->
 
@@ -38,17 +49,6 @@
     </div>
 <!-- end of map info -->            
     <div class="container-fluid body-items">
-        <div class="rowSearch align-items-start">
-            <form id="search-form">
-               	<div class="input-group mb-3">
-					<input type="text" class="stateSearch form-control" placeholder="Search States Here" aria-label="Recipient's username" aria-describedby="button-addon2">
-					<div class="input-group-append">
-				  	<button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-					</div>
-				</div>
-           	</form>
-		</div>
-		<br>
         <div class="container-fluid body-items">    
             <div class="row align-items-start">
             </div>
@@ -57,64 +57,52 @@
                 <br>
                 <br> 
 <!-- <---Cards Here--->
+                <h3 id="stateName">State Name Displayed Here</h3>
                     <div class="row">
                         <div class="col-sm-3 col-xs-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img class="img-responsive photo" src="assets/images/arizona.jpg">
-                                        <span class="card-title">State Name</span>
+                                    <img class="img-responsive photo" src="assets/images/map-3476638_640.jpg">
+                                        <span class="card-title">Basic Information</span>
                                 </div>
                                 <div class="card-content">
-                                    <p>State Facts here</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#" target="new_blank">Link</a>
-                                    <a href="#" target="new_blank">Link</a>
+                                    <p id="basicInfo"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img class="img-responsive photo" src="assets/images/california.jpg">
-                                        <span class="card-title">State Name</span>
+                                    <img class="img-responsive photo" src="assets/images/lego-1044891_640.jpg">
+                                        <span class="card-title">Population</span>
                                 </div>
                                 <div class="card-content">
-                                    <p>State Facts here</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#" target="new_blank">Link</a>
-                                    <a href="#" target="new_blank">Link</a>
+                                    <p id="popInfo"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img class="img-responsive photo" src="assets/images/Montana.jpg">
-                                        <span class="card-title">State Name</span>
+                                    <img class="img-responsive photo" src="assets/images/money-2696229_640.jpg">
+                                        <span class="card-title">Median Income</span>
                                 </div>
                                 <div class="card-content">
-                                    <p>State Facts here</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#" target="new_blank">Link</a>
-                                    <a href="#" target="new_blank">Link</a>
+                                    <p id="incomeInfo"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <div class="card">
                                 <div class="card-image">
-                                    <img class="img-responsive photo" src="assets/images/virginia.jpg">
-                                        <span class="card-title">State Name</span>
+                                    <img class="img-responsive photo" src="assets/images/beer-1513436_640.jpg">
+                                        <span class="card-title">Breweries</span>
                                 </div>
                                 <div class="card-content">
-                                    <p>State Facts here</p>
+                                    <p id="brewInfo"></p>
                                 </div>
                                 <div class="card-action">
-                                    <a href="#" target="new_blank">Link</a>
-                                    <a href="#" target="new_blank">Link</a>
+                                    <a href="Beer.html" target="new_blank">Brewery Info</a>
                                 </div>
                             </div>
                         </div>
