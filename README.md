@@ -26,4 +26,4 @@ api.census.gov/data/
 dictionaryapi.com/
 api.myjson.com/
 
-Deployed Website: https://baileyrva.github.io/stateofhappiness/
+![image](https://user-images.githubusercontent.com/56370824/76030967-bcc8b700-5f04-11ea-9aa1-17fb094d51f4.png)
